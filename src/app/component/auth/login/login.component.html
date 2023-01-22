@@ -1,0 +1,36 @@
+<div class="login-container">
+
+  <div class="container bg-light mat-elevation-z1 rounded b-20"style="width: 30rem;">
+    <div class="row d-flex justify-content-center align-content-lg-center login-form-container" >
+      <h1 class="row justify-content-center">Login</h1>
+      <div>
+        <form class="from-group" [formGroup]="_formObject">
+          <mat-form-field appearance="outline" class="form-width">
+          <mat-label>Email</mat-label>
+          <input type="text" matInput formControlName="emailFormControl"
+          placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="_formObject.get('emailFormControl')?.hasError('email') && !_formObject.get('emailFormControl')?.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="_formObject.get('emailFormControl')?.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-width">
+          <mat-label>Password</mat-label>
+          <input type="text" matInput formControlName="password"
+          placeholder="Ex.password">
+          <mat-error *ngIf="!_formObject.get('password')?.hasError('required')">
+            Please enter a valid password address
+          </mat-error>
+        </mat-form-field>
+      </form>
+</div>
+<div class="button">
+  <span>Do not have an account? <a routerLink="/signup"> Signup Now</a></span>
+  <br>
+  <button  class="btn btn-primary btn-lg btn-block" (click)="login()">Login</button>
+</div>
+</div>
+</div>
+</div>

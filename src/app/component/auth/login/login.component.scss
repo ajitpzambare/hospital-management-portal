@@ -1,0 +1,48 @@
+.login-container{
+  width: 100%;
+  height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #BBD2C5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.login-form-container{
+    h1{
+
+        display: flex;
+        justify-content: center;
+    }
+    background-color: #FFFF;
+    border: 1px solid #EBEFF4;
+    // width: 30%;
+    // height: 60%;
+    border-radius: 4px;
+    z-index: 100;
+    // max-width: 30%;
+    padding-bottom: 60px;
+    // height: auto;
+}
+.from-group{
+    display: flex;
+    flex-direction: column;
+    // display: inline-block;
+    justify-content: center;
+    align-items: center;
+    // width: 40%;
+}
+.form-width{
+    padding: 20px;
+    width: 80%;
+    min-width: 80%;
+}
+.button{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
