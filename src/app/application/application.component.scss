@@ -2,3 +2,13 @@
     background-color: #e7e8e9;  
     overflow: auto;
 }
+.router-container{
+    margin-left: 212px;
+    margin-top: 84px;
+}
+@media only screen and (max-width: 999px) {
+    .router-container{
+        margin-left: 130px;
+        margin-top: 84px;
+    }
+   }

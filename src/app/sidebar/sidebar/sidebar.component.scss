@@ -9,15 +9,7 @@
     color: #FFFF;
 // height: 100%;
 z-index: 100;
-}.example-container {
-    width: 400px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    border: 1px solid black;
-    background-color: rgb(105, 147, 221);
-  }
+}
 .example-container {
     width: 100%;
     height: 100%;
@@ -54,4 +46,15 @@ z-index: 100;
         color:#e4c682
       }
   }
-  
+  @media only screen and (max-width: 999px) {
+   .sidebar-container{
+   
+    width: 114px !important;
+
+   }
+   .dashboard-card{
+    a{
+      font-size: 14px;
+    }
+   }
+  }

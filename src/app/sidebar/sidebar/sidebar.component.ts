@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+  showFiller = false;
+
   constructor(private router :Router){
   }
   logOut(){

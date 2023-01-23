@@ -72,6 +72,7 @@ export class DetailsComponent implements OnInit{
     }
   
   ];
+  
   pieData = [
     {
       "name": "Germany",
@@ -133,9 +134,10 @@ export class DetailsComponent implements OnInit{
       ]
     }
   ];
+  array:any[];
+  multi1:any[]
   
-  
-  public view:[number,number] = [600, 400];
+  public view:[number,number] = [450, 300];
   public showXAxis = true;
   public showYAxis = true;
   public gradient = false;
@@ -145,21 +147,61 @@ export class DetailsComponent implements OnInit{
   public showYAxisLabel = true;
   public yAxisLabel: "Salary";
   public graphDataChart: any[];
+  updateInterval;
   public colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#C4D92E', '#82A53D', '#004B23', '#E67F25']
   };
   constructor() {
-    
+    Object.assign(this, this.array )
+
+    this.multi1 = [{
+      "name": "Data",
+      "series": this.initData()
+    }];
+
+    this.updateInterval = setInterval(() => this.addData(), 1000);
   }
   totalAd=0;
   todayAd=0;
   discharge=0;
   rooms=0;
+  counter = 99;
   ngOnInit(){
     this.totalAd=this.getRandomNo();
     this.todayAd=this.getRandomNo();
     this.discharge=this.getRandomNo();
     this.rooms=this.getRandomNo();
+  }
+  initData() {
+    const array = [];
+    for (let i = 0; i < 100; i++) {
+      // console.log(i)
+      array.push({
+        "name": i.toString(),
+        "value": 0
+      });
+    }
+    // console.log("generated", array)
+    //debugger;
+    return array;
+  }
+
+  addData() {
+    this.counter++;
+    // console.log("test", this.counter, this.multi);
+    this.multi[0].series.shift();
+
+    const data =
+    {
+      "name": this.counter.toString(),
+      "value": this.getRandomArbitrary(-2000, 2000)
+    }
+    this.multi[0].series.push(data);
+    this.multi = [...this.multi];
+  }
+
+  getRandomArbitrary(min:any, max:any) {
+    return Math.random() * (max - min) + min;
   }
   getRandomNo(){
    return Math.floor(1000 + Math.random() * 9000);
